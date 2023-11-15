@@ -21,13 +21,14 @@ if [[ -z "$password" ]]; then
 fi
 
 # Print the results in varaibles (and with color highlighting)
-echo -en "\n \033[0;31m | Settings: [\033[0;33m${settings}\033[0;31m] \e[0m" && \
-echo -en "\n \033[0;31m | Database: [\033[0;33m${database}\033[0;31m] \e[0m" && \
-echo -en "\n \033[0;31m | Username: [\033[0;33m${username}\033[0;31m] \e[0m" && \
-echo -en "\n \033[0;31m | Password: [\033[0;33m${password}\033[0;31m] \e[0m" && \
-echo -en "\n" && \
-echo -en "\n" && \
-echo -en "\n";
+echo "" && \
+echo "" && \
+echo " \033[0;31m | Settings: [\033[0;33m${settings}\033[0;31m] \\033[0m" && \
+echo " \033[0;31m | Database: [\033[0;33m${database}\033[0;31m] \\033[0m" && \
+echo " \033[0;31m | Username: [\033[0;33m${username}\033[0;31m] \\033[0m" && \
+echo " \033[0;31m | Password: [\033[0;33m${password}\033[0;31m] \\033[0m" && \
+echo "" && \
+echo ""
 
 # Unset commands reads
 unset settings
