@@ -8,9 +8,18 @@ username=$( cat "${settings}" | grep "'username' =>" | grep -v "*" | grep -v "#"
 password=$( cat "${settings}" | grep "'password' =>" | grep -v "*" | grep -v "#" | sed -n "s/'password' => '\([^']*\)'.*/\1/p" | sed -e 's/^[[:space:]]*//' )
 
 # Check if any of the variable is empty, if yes them hault th program
-if [[ -z "$database" ]]; then echo "Error: Variable 'database' is not set." && return && fi
-if [[ -z "$username" ]]; then echo "Error: Variable 'username' is not set." && return && fi
-if [[ -z "$password" ]]; then echo "Error: Variable 'password' is not set." && return && fi
+if [[ -z "$database" ]]; then
+    echo "Error: Variable 'database' is not set."
+    return
+fi
+if [[ -z "$username" ]]; then
+    echo "Error: Variable 'username' is not set."
+    return
+fi
+if [[ -z "$password" ]]; then
+    echo "Error: Variable 'password' is not set."
+    return
+fi
 
 # Print the results in varaibles (and with color highlighting)
 echo -en " \e[1;31m | Settings: [\e[1;33m${settings}\e[1;31m] \e[0m\n"
